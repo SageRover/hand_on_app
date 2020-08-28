@@ -26,11 +26,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="用户名:" />
+                android:background="@drawable/txt_radiuborder"
+                android:text="    用户名:" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:inputType="textVisiblePassword"
                 android:maxWidth="150dp"
                 android:minWidth="150dp" />
 
@@ -44,7 +46,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="密  码:" />
+                android:background="@drawable/txt_rectborder"
+                android:text="    密    码:" />
 
             <EditText
                 android:layout_width="wrap_content"

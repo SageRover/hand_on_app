@@ -1,7 +1,5 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -13,7 +11,7 @@ import android.widget.Button;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     public static List<Activity> activityList = new LinkedList();
 
@@ -32,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MainActivity.activityList.add(this);
-        but = (Button) findViewById(R.id.but);   //与布局文件的相关组建关联
+
+        but = findViewById(R.id.but);   //与布局文件的相关组建关联
         but.setOnClickListener(new click());     //注册监听接口
     }
 
