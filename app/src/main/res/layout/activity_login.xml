@@ -8,11 +8,10 @@
     tools:context=".LoginActivity">
 
 
-    <EditText
+    <com.text.view.ClearEditText
         android:id="@+id/editText3"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="204dp"
         android:drawableLeft="@drawable/ic_icon_username"
         android:hint="请输入账号"
         android:inputType="textVisiblePassword"
@@ -25,16 +24,16 @@
         android:theme="@style/MyEditText"
         app:layout_constraintBottom_toTopOf="@+id/editText4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.797" />
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.195" />
 
-    <EditText
+    <com.text.view.ClearEditText
         android:id="@+id/editText4"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="60dp"
         android:drawableLeft="@drawable/ic_icon_password"
 
         android:hint="请输入密码"
@@ -119,5 +118,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.491" />
+
+    <EditText
+        android:id="@+id/textView3"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="33dp"
+        android:drawableLeft="@drawable/vector_drawable_vercode"
+        android:hint="4位验证码"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#6DFFFFFF"
+        android:theme="@style/MyEditText"
+        app:layout_constraintBottom_toTopOf="@+id/but"
+        app:layout_constraintStart_toStartOf="@+id/editText4"
+        app:layout_constraintTop_toBottomOf="@+id/editText4"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/iv_registeractivity_showCode"
+        android:layout_width="125dp"
+        android:layout_height="55dp"
+        android:layout_weight="1.5"
+        android:clickable="true"
+        android:inputType="textVisiblePassword"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.295"
+        app:layout_constraintStart_toEndOf="@+id/textView3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42225033" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
