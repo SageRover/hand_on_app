@@ -9,14 +9,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity2 extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
     Button but;
     private TextView texts;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-        MainActivity.activityList.add(this);
+        setContentView(R.layout.activity_home);
+        LoginActivity.activityList.add(this);
 
         texts=(TextView)findViewById(R.id.textView4);
         texts.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/方正清刻本悦宋简体.TTF"));
@@ -33,7 +33,7 @@ public class MainActivity2 extends AppCompatActivity {
     class onclick implements View.OnClickListener {
         public void onClick(View v) {
             Intent intent2 = new Intent(); //新建Intent对象
-            intent2.setClass(MainActivity2.this, MainActivity.class);
+            intent2.setClass(HomeActivity.this, LoginActivity.class);
             startActivityForResult(intent2, 0);   //返回前一页
         }
     }

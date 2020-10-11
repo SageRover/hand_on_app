@@ -11,7 +11,7 @@ import android.widget.Button;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MainActivity extends Activity {
+public class LoginActivity extends Activity {
 
     public static List<Activity> activityList = new LinkedList();
 
@@ -28,8 +28,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        MainActivity.activityList.add(this);
+        setContentView(R.layout.activity_login);
+        LoginActivity.activityList.add(this);
 
         but = findViewById(R.id.but);   //与布局文件的相关组建关联
         but.setOnClickListener(new click());     //注册监听接口
@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
 
     class click implements View.OnClickListener {   //定义一个类实现监听的接口
         public void onClick(View v) {
-            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
             // 创建好之后就可以通过它启动新的Activity
             startActivity(intent);
         }
