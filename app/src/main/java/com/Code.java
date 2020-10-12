@@ -10,7 +10,7 @@ import java.util.Random;
 public class Code {
     /**
      * 随机数数组
-     * 去除了易混淆的 数字 0 和 字母 o O
+     * 去除了易混淆的 数字 0 和  字母 o O
      *                数字 1 和  字母 i I l L
      *                数字 6 和 字母 b
      *                数字 9 和 字母 q
