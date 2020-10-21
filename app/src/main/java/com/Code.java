@@ -39,7 +39,7 @@ public class Code {
     //默认字体大小
     private static final int DEFAULT_FONT_SIZE = 25;
     //默认线条的条数
-    private static final int DEFAULT_LINE_NUMBER = 5;
+    private static final int DEFAULT_LINE_NUMBER = 10;
     //padding值
     private static final int BASE_PADDING_LEFT = 10, RANGE_PADDING_LEFT = 15, BASE_PADDING_TOP = 15, RANGE_PADDING_TOP = 20;
     //验证码的默认宽高

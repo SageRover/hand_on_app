@@ -9,11 +9,15 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import cn.bmob.v3.Bmob;
+
 public class HomeActivity extends AppCompatActivity {
     Button but;
     private TextView texts;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //第一：Bmob默认初始化
+        Bmob.initialize(this, "d26004a40bcb7e3f58360c2a17332282");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         LoginActivity.activityList.add(this);

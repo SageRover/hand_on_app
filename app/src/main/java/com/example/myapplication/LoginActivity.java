@@ -17,6 +17,8 @@ import com.Code;
 import java.util.LinkedList;
 import java.util.List;
 
+import cn.bmob.v3.Bmob;
+
 public class LoginActivity extends Activity {
 
     public static List<Activity> activityList = new LinkedList();
@@ -29,12 +31,15 @@ public class LoginActivity extends Activity {
     }
 
 
-    Button but;
+    Button but_login;
+    Button but_register;
     ImageView ima;
     private String realCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //第一：Bmob默认初始化
+        Bmob.initialize(this, "d26004a40bcb7e3f58360c2a17332282");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         LoginActivity.activityList.add(this);
@@ -58,7 +63,9 @@ public class LoginActivity extends Activity {
 
     private void initView() {
         // 初始化控件
-        but = findViewById(R.id.but);   //与布局文件的相关组件关联
+        but_login = findViewById(R.id.but_login);   //与布局文件的相关组件关联
+        but_register = findViewById(R.id.but_register);   //与布局文件的相关组件关联
+
         ima = findViewById(R.id.iv_registeractivity_showCode);
 /*        mBtLoginactivityLogin = findViewById(R.id.bt_loginactivity_login);
         mTvLoginactivityRegister = findViewById(R.id.tv_loginactivity_register);
@@ -68,7 +75,8 @@ public class LoginActivity extends Activity {
         mIvloginactivityShowcode = findViewById(R.id.iv_loginactivity_showCode);*/
 
         // 设置点击事件监听器
-        but.setOnClickListener(new click());     //注册监听接口
+        but_login.setOnClickListener(new click());        //注册“登录”监听接口
+        but_register.setOnClickListener(new click2());     //注册“注册”监听接口
 /*
         mBtLoginactivityLogin.setOnClickListener(this);
         mIvloginactivityShowcode.setOnClickListener(this);
@@ -81,7 +89,7 @@ public class LoginActivity extends Activity {
         public void onClick(View v) {
             Animation animation=new AlphaAnimation(1.0f,0.0f);
             animation.setDuration(300);
-            but.startAnimation(animation);
+            but_login.startAnimation(animation);
 
             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
             // 创建好之后就可以通过它启动新的Activity
@@ -89,6 +97,17 @@ public class LoginActivity extends Activity {
         }
     }
 
+    class click2 implements View.OnClickListener {   //定义一个类实现监听的接口
+        public void onClick(View v) {
+            Animation animation=new AlphaAnimation(1.0f,0.0f);
+            animation.setDuration(300);
+            but_register.startAnimation(animation);
+
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            // 创建好之后就可以通过它启动新的Activity
+            startActivity(intent);
+        }
+    }
 
     public void showdialog(View view) {
         //定义一个新的对话框对象

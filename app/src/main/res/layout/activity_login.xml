@@ -9,11 +9,12 @@
 
 
     <com.text.view.ClearEditText
-        android:id="@+id/editText3"
+        android:id="@+id/et_user_name"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_icon_username"
         android:hint="请输入账号"
+        android:drawablePadding="10dp"
         android:inputType="textVisiblePassword"
         android:maxWidth="150dp"
         android:minWidth="150dp"
@@ -22,7 +23,7 @@
         android:textColorHint="#6DFFFFFF"
         android:textSize="18sp"
         android:theme="@style/MyEditText"
-        app:layout_constraintBottom_toTopOf="@+id/editText4"
+        app:layout_constraintBottom_toTopOf="@+id/et_user_passward"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,11 +31,12 @@
         app:layout_constraintVertical_bias="0.195" />
 
     <com.text.view.ClearEditText
-        android:id="@+id/editText4"
+        android:id="@+id/et_user_passward"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
         android:drawableLeft="@drawable/ic_icon_password"
+        android:drawablePadding="10dp"
 
         android:hint="请输入密码"
         android:inputType="textWebPassword"
@@ -44,9 +46,9 @@
         android:textColorHint="#6DFFFFFF"
         android:theme="@style/MyEditText"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toEndOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="@+id/et_user_name"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editText3" />
+        app:layout_constraintStart_toStartOf="@+id/et_user_name" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -63,7 +65,7 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <Button
-        android:id="@+id/but"
+        android:id="@+id/but_login"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:background="#008B9E"
@@ -77,26 +79,41 @@
         app:layout_constraintVertical_bias="0.23" />
 
     <Button
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:id="@+id/but_register"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
         android:background="#FFFFFF"
         android:onClick="showdialog"
+        android:text="注册"
+        android:textColor="#008B9E"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/but_login"
+        app:layout_constraintTop_toBottomOf="@+id/but_login"
+        app:layout_constraintVertical_bias="0.245" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:background="#FFFFFF"
         android:text="退出"
         android:textColor="#008B9E"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/but"
-        app:layout_constraintVertical_bias="0.219" />
+        app:layout_constraintEnd_toEndOf="@+id/but_login"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/but_login"
+        app:layout_constraintVertical_bias="0.245" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="226dp"
         android:layout_height="212dp"
         android:src="@drawable/vector_drawable_user"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintBottom_toTopOf="@+id/et_user_name"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="parent"
@@ -111,7 +128,7 @@
         android:textColor="#FFFFFF"
         android:textSize="60sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintBottom_toTopOf="@+id/et_user_name"
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintHorizontal_bias="0.501"
@@ -121,20 +138,21 @@
 
     <EditText
         android:id="@+id/textView3"
-        android:layout_width="130dp"
+        android:layout_width="138dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="33dp"
         android:drawableLeft="@drawable/vector_drawable_vercode"
+        android:drawablePadding="10dp"
         android:hint="4位验证码"
         android:singleLine="true"
         android:textColor="#FFFFFF"
         android:textColorHint="#6DFFFFFF"
         android:theme="@style/MyEditText"
-        app:layout_constraintBottom_toTopOf="@+id/but"
-        app:layout_constraintStart_toStartOf="@+id/editText4"
-        app:layout_constraintTop_toBottomOf="@+id/editText4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintBottom_toTopOf="@+id/but_login"
+        app:layout_constraintStart_toStartOf="@+id/et_user_passward"
+        app:layout_constraintTop_toBottomOf="@+id/et_user_passward"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/iv_registeractivity_showCode"
@@ -143,7 +161,6 @@
         android:layout_weight="1.5"
         android:clickable="true"
         android:inputType="textVisiblePassword"
-        android:onClick="onClick"
         app:layout_constraintBottom_toBottomOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.295"
