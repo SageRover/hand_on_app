@@ -3,7 +3,6 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -43,14 +42,6 @@ public class RegisterActivity extends AppCompatActivity {
         LoginActivity.activityList.add(this);
 
         initView();                     // 将所有对象与各布局文件的相关组件关联的步骤 以及 注册监听接口的步骤 集合到initView()方法内——称之为初始化
-
-        butRegistered.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signUp();
-            }
-        });
-
 
     }
 
@@ -107,6 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     @OnClick(R.id.but_registered)
     public void onViewClicked() {
+        signUp();
     }
 }
 
