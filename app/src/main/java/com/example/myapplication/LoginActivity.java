@@ -187,15 +187,28 @@ public class LoginActivity extends Activity {
 
     private void login() {
         final User user = new User();
-        user.setUsername(etUserName.getText().toString().trim());
-        user.setPassword(etUserPassword.getText().toString().trim());
 
         String SecurityCode = etSecurityCode.getText().toString().trim().toLowerCase();
+        String UserName = etUserName.getText().toString().trim();
+        String UserPassword = etUserPassword.getText().toString().trim();
+
+
+        if (UserName.isEmpty() ) {
+            Toast.makeText(LoginActivity.this, "请输入正确的账号", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (UserPassword.isEmpty() ) {
+            Toast.makeText(LoginActivity.this, "请输入正确的密码", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         if (SecurityCode.isEmpty() || !SecurityCode.equals(realCode.toLowerCase())) {
             Toast.makeText(LoginActivity.this, "请输入正确的验证码", Toast.LENGTH_SHORT).show();
             return;
         }
+
+        user.setUsername(UserName);
+        user.setPassword(UserPassword);
 
         user.login(new SaveListener<User>() {
             public void done(User bmobUser, BmobException e) {
