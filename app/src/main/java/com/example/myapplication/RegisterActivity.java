@@ -26,7 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
     ClearEditText etUserName;
     @BindView(R.id.et_user_phone)
     ClearEditText etUserPhone;
-    @BindView(R.id.et_user_passward)
+    @BindView(R.id.et_user_password)
     ClearEditText etUserPassward;
     @BindView(R.id.et_user_passwardagain)
     ClearEditText etUserPasswardagain;

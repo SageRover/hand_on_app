@@ -51,7 +51,7 @@
 
 
     <com.text.view.ClearEditText
-        android:id="@+id/et_user_passward"
+        android:id="@+id/et_user_password"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -86,7 +86,7 @@
         android:theme="@style/MyEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_user_passward" />
+        app:layout_constraintTop_toBottomOf="@+id/et_user_password" />
 
     <Button
         android:id="@+id/but_registered"

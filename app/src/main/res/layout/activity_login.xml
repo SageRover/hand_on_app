@@ -13,8 +13,8 @@
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_icon_username"
-        android:hint="请输入账号"
         android:drawablePadding="10dp"
+        android:hint="请输入账号"
         android:inputType="textVisiblePassword"
         android:maxWidth="150dp"
         android:minWidth="150dp"
@@ -23,7 +23,7 @@
         android:textColorHint="#6DFFFFFF"
         android:textSize="18sp"
         android:theme="@style/MyEditText"
-        app:layout_constraintBottom_toTopOf="@+id/et_user_passward"
+        app:layout_constraintBottom_toTopOf="@+id/et_user_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
         app:layout_constraintVertical_bias="0.195" />
 
     <com.text.view.ClearEditText
-        android:id="@+id/et_user_passward"
+        android:id="@+id/et_user_password"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
@@ -98,6 +98,7 @@
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:background="#FFFFFF"
+        android:onClick="showdialog"
         android:text="退出"
         android:textColor="#008B9E"
         android:textSize="24sp"
@@ -137,21 +138,23 @@
         app:layout_constraintVertical_bias="0.491" />
 
     <EditText
-        android:id="@+id/textView3"
+        android:id="@+id/et_security_code"
         android:layout_width="138dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="33dp"
         android:drawableLeft="@drawable/vector_drawable_vercode"
         android:drawablePadding="10dp"
+        android:inputType="textVisiblePassword"
+        android:maxLength="4"
         android:hint="4位验证码"
         android:singleLine="true"
         android:textColor="#FFFFFF"
         android:textColorHint="#6DFFFFFF"
         android:theme="@style/MyEditText"
         app:layout_constraintBottom_toTopOf="@+id/but_login"
-        app:layout_constraintStart_toStartOf="@+id/et_user_passward"
-        app:layout_constraintTop_toBottomOf="@+id/et_user_passward"
+        app:layout_constraintStart_toStartOf="@+id/et_user_password"
+        app:layout_constraintTop_toBottomOf="@+id/et_user_password"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
@@ -161,10 +164,10 @@
         android:layout_weight="1.5"
         android:clickable="true"
         android:inputType="textVisiblePassword"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintBottom_toBottomOf="@+id/et_security_code"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.295"
-        app:layout_constraintStart_toEndOf="@+id/textView3" />
+        app:layout_constraintStart_toEndOf="@+id/et_security_code" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
