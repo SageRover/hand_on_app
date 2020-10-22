@@ -101,6 +101,12 @@ public class LoginActivity extends Activity {
             animation.setDuration(300);
             but_login.startAnimation(animation);
 
+            //这三行代码暂时放这里
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            // 创建好之后就可以通过它启动新的Activity
+            startActivity(intent);
+            //
+
             login();
         }
     }
