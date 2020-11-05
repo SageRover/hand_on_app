@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,10 @@ import android.widget.LinearLayout;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
+
 /**
  * @author Sage
  * @time 2020/10/22 22:31
@@ -23,7 +25,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
     private List<Integer> data;
     private OnItemClickListener mListener;
 
-
+    //构造方法
     public MyRecyclerAdapter(Context context, List<Integer> data) {
         this.context = context;
         this.data = data;
@@ -36,7 +38,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NotNull MyViewHolder holder, int position) {
         holder.imageView.setImageResource(this.data.get(position));
 
 /*        final ImageData data = this.data.get(position);
@@ -63,19 +65,19 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
         }
 
         //以下为设置监听
-        if(mListener!=null){//如果设置了监听那么它就不为空，然后回调相应的方法
+        if (mListener != null) {//如果设置了监听那么它就不为空，然后回调相应的方法
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int pos = holder.getLayoutPosition();//得到当前点击item的位置pos
-                    mListener.ItemClickListener(holder.itemView,pos);//把事件交给我们实现的接口那里处理
+                    mListener.ItemClickListener(holder.itemView, pos);//把事件交给我们实现的接口那里处理
                 }
             });
             holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
                     int pos = holder.getLayoutPosition();//得到当前点击item的位置pos
-                    mListener.ItemLongClickListener(holder.itemView,pos);//把事件交给我们实现的接口那里处理
+                    mListener.ItemLongClickListener(holder.itemView, pos);//把事件交给我们实现的接口那里处理
                     return true;
                 }
             });
@@ -88,10 +90,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
         return this.data.size();
     }
 
-    public interface OnItemClickListener{
-        void ItemClickListener(View view,int postion);
-        void ItemLongClickListener(View view,int postion);
+    public interface OnItemClickListener {
+        void ItemClickListener(View view, int postion);
+        void ItemLongClickListener(View view, int postion);
     }
+
     public void setOnClickListener(OnItemClickListener listener) {
         this.mListener = listener;
     }

@@ -62,4 +62,19 @@ dependencies {
     implementation 'com.jakewharton:butterknife:10.2.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
+    //Glide加载库
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    //Okhttp-网络请求框架
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+
+    //GSON-JSON解析库
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    //retrofit2---我们可以理解为OkHttp的加强版，它也是一个网络加载框架
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    //BaseRecyclerViewAdapterHelper
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
 }

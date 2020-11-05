@@ -5,8 +5,11 @@ import android.graphics.Color;
 import android.graphics.Paint;
 
 import java.util.Random;
-
-//自定义Code类用于生成验证码图像及验证码
+/**
+ * @author Sage
+ * @time 2020/11/4 22:32
+ * @description 自定义Code类用于生成验证码图像及验证码
+ */
 public class Code {
     /**
      * 随机数数组

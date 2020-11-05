@@ -40,8 +40,8 @@ public class HomeActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         LoginActivity.activityList.add(this);
 
+        //list初始化
         initData();
-
         //设置布局管理器 
         recyclerview.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         //设置Item增加、移除动画
@@ -105,7 +105,7 @@ public class HomeActivity extends AppCompatActivity {
         List<Integer> data = new ArrayList<Integer>();
         for (int i = 0; i < 100; i++) {
             if (i % 2 == 0) {
-                data.add(R.mipmap.ic_launcher);
+                data.add(R.drawable.ic_icon_phone);
             } else {
                 data.add(R.drawable.setting);
             }
