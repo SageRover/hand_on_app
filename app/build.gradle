@@ -24,8 +24,10 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            //Enable the proguard启用ProGuard 规则混淆规则——通过设置 minifyEnabled 属性为 true，会告诉 proguard 删除所有未使用的方法和指令，进一步的减少 .dex 文件的大小。
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
         }
     }
     useLibrary 'org.apache.http.legacy'  //Bmob依赖文件
