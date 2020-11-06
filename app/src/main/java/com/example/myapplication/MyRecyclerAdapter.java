@@ -21,7 +21,6 @@ import java.util.List;
 public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.MyViewHolder> {
 
     private Context context;
-
     private List<Integer> data;
     private OnItemClickListener mListener;
 
@@ -31,12 +30,27 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
         this.data = data;
     }
 
+    //先定义一个Holder类继承RecyclerView.ViewHolder，之后直接在MyRecyclerAdapter上，指定泛型就是MyViewHolder
+    class MyViewHolder extends RecyclerView.ViewHolder {
+        private ImageView imageView;
+        //带 view类型的参数itemView 的构造方法
+        public MyViewHolder(View itemView) {
+            super(itemView);    // 调用父类具有相同形参的构造方法（2）
+            //MyViewHolder类内部 新定义ImageView 绑定 R.id.imageView1（我们自己的图像）
+            this.imageView = (ImageView) itemView.findViewById(R.id.imageView1);
+        }
+    }
+
+    //重写3个方法
+
+    //创建Holder
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        //用自己做的自定义布局item_recyclerview 作为 新生成的MyViewHolder类的实例holder的参数，来填充
         MyViewHolder holder = new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_recyclerview, parent, false));
         return holder;
     }
-
+    //绑定ViewHolder
     @Override
     public void onBindViewHolder(@NotNull MyViewHolder holder, int position) {
         holder.imageView.setImageResource(this.data.get(position));
@@ -84,29 +98,26 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
         }
 
     }
-
+    //获取Item的数目
     @Override
     public int getItemCount() {
         return this.data.size();
     }
 
+    /**
+     * 点击监听回调接口
+     */
     public interface OnItemClickListener {
         void ItemClickListener(View view, int postion);
         void ItemLongClickListener(View view, int postion);
     }
-
+    /**
+     * 增加点击监听
+     */
     public void setOnClickListener(OnItemClickListener listener) {
         this.mListener = listener;
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView imageView;
-
-        public MyViewHolder(View itemView) {
-            super(itemView);
-            this.imageView = (ImageView) itemView.findViewById(R.id.imageView1);
-        }
-    }
 
 }
