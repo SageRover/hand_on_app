@@ -38,6 +38,9 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
             super(itemView);    // 调用父类具有相同形参的构造方法（2）
             //MyViewHolder类内部 新定义ImageView 绑定 R.id.imageView1（我们自己的图像）
             this.imageView = (ImageView) itemView.findViewById(R.id.imageView1);
+
+
+
         }
     }
 

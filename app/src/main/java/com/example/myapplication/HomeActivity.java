@@ -33,6 +33,7 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         //第一：Bmob默认初始化
         Bmob.initialize(this, "d26004a40bcb7e3f58360c2a17332282");
         super.onCreate(savedInstanceState);
