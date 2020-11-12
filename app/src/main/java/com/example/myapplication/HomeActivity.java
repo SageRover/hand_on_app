@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.example.myapplication.recyclerView.MyAdapter;
+import com.example.myapplication.recyclerView.MyRecyclerAdapter;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -43,6 +45,22 @@ public class HomeActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         LoginActivity.activityList.add(this);
 
+
+        //设置布局管理器 
+        recyclerview.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        //设置Item增加、移除动画
+        recyclerview.setItemAnimator(new DefaultItemAnimator());
+        //添加分割线
+        recyclerview.addItemDecoration(new MyDecoration());
+
+
+
+        MyAdapter adapter = new MyAdapter(R.layout.item_recyclerview,createImageIDData());
+        recyclerview.setAdapter(adapter);
+
+//        // 设置新的数据方法
+//        adapter.setNewData(createImageIDData());
+
         //底部导航栏
         BottomNavigationBar bottomNavigationBar = findViewById(R.id.bottom_navigation_bar);
         bottomNavigationBar
@@ -55,8 +73,9 @@ public class HomeActivity extends AppCompatActivity {
 
         //Bmob默认初始化
         Bmob.initialize(this, "d26004a40bcb7e3f58360c2a17332282");
-        //Recyclerview初始化及其实现
-        initRecyclerview();
+
+//        //Recyclerview初始化及其实现
+//        initRecyclerview();
 
 
         texts = (TextView) findViewById(R.id.textView4);
@@ -74,6 +93,19 @@ public class HomeActivity extends AppCompatActivity {
                 startActivityForResult(intent2, 0);   //返回前一页
             }
         });
+    }
+
+    private List<Integer> createImageIDData() {
+
+            List<Integer> data = new ArrayList<>();
+            for (int i = 0; i < 100; i++) {
+                if (i % 2 == 0) {
+                    data.add(R.drawable.a2);
+                } else {
+                    data.add(R.drawable.a1);
+                }
+            }
+            return data;
     }
 
     private void initRecyclerview() {
