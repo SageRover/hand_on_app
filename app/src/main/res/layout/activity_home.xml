@@ -11,8 +11,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_weight="1"
+        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
 
 
@@ -50,77 +50,19 @@
             </LinearLayout>
 
 
-
-
             <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerview"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
 
         </LinearLayout>
 
-        <View
+        <com.ashokvarma.bottomnavigation.BottomNavigationBar
+            android:id="@+id/bottom_navigation_bar"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginBottom="5dp"
-            android:background="#CCCCCC" />
-
-        <RadioGroup
-            android:id="@+id/rg_group"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_gravity="bottom"
-            android:orientation="horizontal"
-            android:layout_weight="1"
-            tools:ignore="MissingConstraints">
-
-            <RadioButton
-                android:id="@+id/rb_map"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/transparent"
-                android:button="@null"
-                android:drawableTop="@drawable/user"
-                android:gravity="center" />
-
-
-            <RadioButton
-                android:id="@+id/rb_car"
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:background="@color/transparent"
-                android:button="@null"
-                android:drawableTop="@drawable/jiangshi"
-                android:gravity="center_vertical"
-                android:paddingTop="5dp" />
-
-            <RadioButton
-                android:id="@+id/rb_find"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/transparent"
-                android:button="@null"
-                android:drawableTop="@drawable/international"
-                android:gravity="center" />
-
-            <RadioButton
-                android:id="@+id/rb_me"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/transparent"
-                android:button="@null"
-                android:checked="true"
-                android:drawableTop="@drawable/setting"
-                android:gravity="center" />
-        </RadioGroup>
-
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" />
 
     </LinearLayout>
 

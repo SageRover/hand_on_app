@@ -86,5 +86,10 @@ dependencies {
     //AppUpdate库
     implementation 'com.qianwen:update-app:3.5.2'
 
+    //RoundedImageView
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    //BottomNavigationBar
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.2.0'
 
 }

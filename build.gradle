@@ -25,6 +25,8 @@ allprojects {
 
         maven {url 'https://dl.bintray.com/chaozhouzhang/maven' }       //Bmob的maven仓库地址--必填
         maven { url 'https://jitpack.io' }                              //BaseRecyclerViewAdapterHelper的maven仓库地址
+        mavenCentral()                                                  //RoundedImageView
+
 
 //        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}//国内阿里云镜像仓库地址
     }
