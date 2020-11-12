@@ -4,20 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="5dp">
-
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView1"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:scaleType="fitXY"-->
-<!--        app:srcCompat="@drawable/a2" />-->
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:scaleType="centerCrop"
         app:riv_border_color="#e2e2e2"
         app:riv_border_width="0dp"
@@ -26,7 +21,7 @@
         app:riv_oval="false"
         app:riv_tile_mode="repeat" />
 
-     riv_tile_mode="repeat" 这个属性用于当有空的时候，重复图像以填满
+    <!--     riv_tile_mode="repeat" 这个属性用于当有空的时候，重复图像以填满-->
 
 
 </LinearLayout><!--

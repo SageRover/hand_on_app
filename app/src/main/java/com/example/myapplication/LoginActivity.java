@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Process;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -37,6 +35,10 @@ public class LoginActivity extends Activity {
     ClearEditText etUserPassword;
     @BindView(R.id.et_security_code)
     EditText etSecurityCode;
+    @BindView(R.id.but_login)
+    Button butLogin;
+    @BindView(R.id.but_register)
+    Button butRegister;
 
     public void exit() {
         for (Activity act : activityList) {
@@ -46,8 +48,7 @@ public class LoginActivity extends Activity {
     }
 
 
-    Button but_login;
-    Button but_register;
+
     ImageView ima;
     private String realCode;
 
@@ -80,14 +81,14 @@ public class LoginActivity extends Activity {
 
     private void initView() {
         // 初始化控件
-        but_login = findViewById(R.id.but_login);   //与布局文件的相关组件关联
-        but_register = findViewById(R.id.but_register);   //与布局文件的相关组件关联
+        butLogin = findViewById(R.id.but_login);   //与布局文件的相关组件关联
+        butRegister = findViewById(R.id.but_register);   //与布局文件的相关组件关联
 
         ima = findViewById(R.id.iv_registeractivity_showCode);
 
         // 设置点击事件监听器
-        but_login.setOnClickListener(new click());        //注册“登录”监听接口
-        but_register.setOnClickListener(new click2());     //注册“注册”监听接口
+        butLogin.setOnClickListener(new click());        //注册“登录”监听接口
+        butRegister.setOnClickListener(new click2());     //注册“注册”监听接口
 /*
         mBtLoginactivityLogin.setOnClickListener(this);
         mIvloginactivityShowcode.setOnClickListener(this);
@@ -98,9 +99,6 @@ public class LoginActivity extends Activity {
 
     class click implements View.OnClickListener {   //定义一个类实现监听的接口
         public void onClick(View v) {
-            Animation animation = new AlphaAnimation(1.0f, 0.0f);
-            animation.setDuration(300);
-            but_login.startAnimation(animation);
 
             //这三行代码暂时放这里
             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
@@ -114,9 +112,9 @@ public class LoginActivity extends Activity {
 
     class click2 implements View.OnClickListener {   //定义一个类实现监听的接口
         public void onClick(View v) {
-            Animation animation = new AlphaAnimation(1.0f, 0.0f);
-            animation.setDuration(300);
-            but_register.startAnimation(animation);
+//            Animation animation = new AlphaAnimation(1.0f, 0.0f);
+//            animation.setDuration(300);
+//            butRegister.startAnimation(animation);
 
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             // 创建好之后就可以通过它启动新的Activity
@@ -191,7 +189,6 @@ public class LoginActivity extends Activity {
     }*/
 
 
-
     private void login() {
         final User user = new User();
 
@@ -200,11 +197,11 @@ public class LoginActivity extends Activity {
         String UserPassword = etUserPassword.getText().toString().trim();
 
 
-        if (UserName.isEmpty() ) {
+        if (UserName.isEmpty()) {
             Toast.makeText(LoginActivity.this, "请输入正确的账号", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (UserPassword.isEmpty() ) {
+        if (UserPassword.isEmpty()) {
             Toast.makeText(LoginActivity.this, "请输入正确的密码", Toast.LENGTH_SHORT).show();
             return;
         }
