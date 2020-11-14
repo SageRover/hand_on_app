@@ -1,5 +1,8 @@
 package com.example.myapplication.recyclerview;
 
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.example.myapplication.R;
@@ -24,7 +27,12 @@ public class MyAdapter extends BaseQuickAdapter<Integer, BaseViewHolder> {
      */
     @Override
     protected void convert(@NotNull BaseViewHolder helper, @NotNull Integer item) {
-        helper.setImageResource(R.id.imageView1,item);
+        //Glide加载应用资源图片
+        Glide.with(getContext())
+                .load(item)
+                .into((ImageView) helper.getView(R.id.imageView1));  //是将资源加载到holder上的imageView1中，而不是直接加载到imageView1中
+//        helper.setImageResource(R.id.imageView1,item);             //BRVAH自带设置图片
+
     }
 
 //    @Override

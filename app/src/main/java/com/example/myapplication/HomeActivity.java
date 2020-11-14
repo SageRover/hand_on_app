@@ -103,6 +103,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
                 Log.d(TAG, "onItemLongClick: ");
+                adapter.remove(position);
                 Toast.makeText(HomeActivity.this, "长按了第" + (position + 1) + "条条目", Toast.LENGTH_SHORT).show();
                 return false;
             }

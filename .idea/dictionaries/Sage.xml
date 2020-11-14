@@ -2,8 +2,10 @@
   <dictionary name="Sage">
     <words>
       <w>bmob</w>
+      <w>brvah</w>
       <w>butterknife</w>
       <w>gson</w>
+      <w>jcenter</w>
       <w>multidex</w>
       <w>okhttp</w>
     </words>
