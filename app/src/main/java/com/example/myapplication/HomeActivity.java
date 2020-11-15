@@ -93,10 +93,17 @@ public class HomeActivity extends AppCompatActivity {
 //      // 设置新的数据方法
 //      adapter.setNewData(createImageIDData());
 
+
         //条目点击事件
         adapter.setOnItemClickListener((adapter1, view, position) -> {
             Log.d(TAG, "onItemClick: ");
             Toast.makeText(HomeActivity.this, "点击了第" + (position + 1) + "条条目", Toast.LENGTH_SHORT).show();
+            //大图预览
+            Intent intent = new Intent(HomeActivity.this,PictureDisplayActivity.class);
+            intent.putExtra("position",position);
+            intent.putIntegerArrayListExtra("enlargeImage", (ArrayList)createImageIDData());
+            startActivity(intent);
+
         });
         //条目长按事件
         adapter.setOnItemLongClickListener(new OnItemLongClickListener() {
@@ -180,6 +187,44 @@ public class HomeActivity extends AppCompatActivity {
 //        }
 //        return data;
 //    }
+//public void showPictureDialog(final int mPosition) {
+//    //创建dialog
+//    mDialog = new Dialog(this, R.style.PictureDialog);
+//    final Window window1 = mDialog.getWindow() ;
+//    WindowManager m = getWindowManager();
+//    Display d = m.getDefaultDisplay(); // 获取屏幕宽、高用
+//    WindowManager.LayoutParams p = window1.getAttributes(); // 获取对话框当前的参数值
+//    p.height = (int) (d.getHeight() * 1.0); // 改变的是dialog框在屏幕中的位置而不是大小
+//    p.width = (int) (d.getWidth() * 1.0); // 宽度设置为屏幕
+//    window1.setAttributes(p);
+//    View inflate = View.inflate(QuestionDetailsActivity.this, R.layout.picture_dialog, null);//该layout在后面po出
+//    int screenWidth = getResources().getDisplayMetrics().widthPixels;
+//    ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(screenWidth, ViewGroup.LayoutParams.MATCH_PARENT);
+//    mDialog.setContentView(inflate, layoutParams);
+//    pager = (ViewPagerFixed) inflate.findViewById(R.id.gallery01);
+//    pager.setOnPageChangeListener(pageChangeListener);
+//    PicturePageAdapter adapter = new PicturePageAdapter((ArrayList<String>) mListPicPath, this);
+//    pager.setAdapter(adapter);
+//    pager.setPageMargin(0);
+//    pager.setCurrentItem(mPosition);        window1.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//    mDialog.setOnKeyListener(new DialogOnKeyListener());
+//    mDialog.show();
+//    adapter.setOnPictureClickListener(new PicturePageAdapter.OnPictureClickListener() {
+//        @Override
+//        public void OnClick() {                window1.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//            mDialog.dismiss();
+//        }
+//    });
+//    //长按图片保存
+//    adapter.setOnPictureLongClickListener(new PicturePageAdapter.OnPictureLongClickListener() {
+//        @Override
+//        public void OnLongClick() {
+//            //展示保存取消dialog
+//            showPicDialog();
+//        }
+//    });
+//}
+
 }
 
 

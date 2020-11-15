@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:background="?android:attr/selectableItemBackground"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp">
 
-    <com.makeramen.roundedimageview.RoundedImageView
+    <ImageView
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:scaleType="centerCrop" />
+<!--    <com.github.chrisbanes.photoview.PhotoView-->
+<!--        android:id="@+id/imageView1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:scaleType="centerCrop"/>-->
 
-        android:scaleType="centerCrop"
-        app:riv_border_color="#e2e2e2"
-        app:riv_border_width="0dp"
-        app:riv_corner_radius="5dp"
-        app:riv_mutate_background="true"
-        app:riv_oval="false"
-        app:riv_tile_mode="repeat" />
-
-    <!--     riv_tile_mode="repeat" 这个属性用于当有空的时候，重复图像以填满-->
-
-
-</LinearLayout><!--
-            android:adjustViewBounds="true"
-    -->
+</androidx.cardview.widget.CardView><!--android:adjustViewBounds="true"-->

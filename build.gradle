@@ -31,7 +31,7 @@ allprojects {
         maven { url 'https://dl.bintray.com/chaozhouzhang/maven' }       //Bmob的maven仓库地址--必填
         maven { url 'https://jitpack.io' }              //BaseRecyclerViewAdapterHelper的maven仓库地址
         maven { url 'https://maven.google.com' }                        //Glide
-
+        maven { url "https://jitpack.io" }              //chrisbanes-PhotoView
 
     }
 }

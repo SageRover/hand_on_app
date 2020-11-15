@@ -4,12 +4,12 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
-import com.makeramen.roundedimageview.RoundedImageView;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -34,7 +34,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
 
     //先定义一个Holder内部类继承 抽象类RecyclerView.ViewHolder，之后直接在MyRecyclerAdapter上，指定泛型就是MyViewHolder
     class MyViewHolder extends RecyclerView.ViewHolder {
-        private RoundedImageView imageView;
+        private ImageView imageView;
         //带 view类型的参数itemView 的构造方法
         public MyViewHolder(View itemView) {
             super(itemView);    // 调用父类具有相同形参的构造方法
