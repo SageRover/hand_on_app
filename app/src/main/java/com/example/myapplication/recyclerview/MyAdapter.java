@@ -3,6 +3,8 @@ package com.example.myapplication.recyclerview;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.example.myapplication.R;
@@ -30,8 +32,12 @@ public class MyAdapter extends BaseQuickAdapter<Integer, BaseViewHolder> {
         //Glide加载应用资源图片
         Glide.with(getContext())
                 .load(item)
-                .into((ImageView) helper.getView(R.id.imageView1));  //是将资源加载到holder上的imageView1中，而不是直接加载到imageView1中
-//        helper.setImageResource(R.id.imageView1,item);             //BRVAH自带设置图片
+                .apply(RequestOptions.bitmapTransform(new RoundedCorners(50)))
+                .into((ImageView) helper.getView(R.id.Recycler_item_imageView));  //是将资源加载到holder上的Recycler_item_imageView中，而不是直接加载到Recycler_item_imageView中
+
+
+
+//        helper.setImageResource(R.id.Recycler_item_imageView,item);             //BRVAH自带设置图片
 
     }
 

@@ -101,6 +101,7 @@ public class HomeActivity extends AppCompatActivity {
         recyclerview.setAdapter(adapter);
 //      // 设置新的数据方法
 //      adapter.setNewData(createImageIDData());
+//      adapter.setAnimationWithDefault(AlphaAnimation);
 
 
         //条目点击事件
@@ -118,6 +119,7 @@ public class HomeActivity extends AppCompatActivity {
                 XPopup(position, adapter);
             }
         });
+
 
         //条目长按事件
         adapter.setOnItemLongClickListener(new OnItemLongClickListener() {
@@ -155,11 +157,11 @@ public class HomeActivity extends AppCompatActivity {
         //当你点击图片的时候执行以下代码：
         // 多图片场景（你有多张图片需要浏览）
         //srcView参数表示你点击的那个ImageView，动画从它开始，结束时回到它的位置。
-        new XPopup.Builder(this).asImageViewer((ImageView) adapter.getViewByPosition(position, createImageIDData().get(position)), position, (ArrayList) createImageIDData(), new OnSrcViewUpdateListener() {
+        new XPopup.Builder(this).asImageViewer((ImageView) adapter.getViewByPosition(position, R.id.Recycler_item_imageView), position, (ArrayList) createImageIDData(), new OnSrcViewUpdateListener() {
             @Override
             public void onSrcViewUpdate(ImageViewerPopupView popupView, int position) {
                 // 作用是当Pager切换了图片，需要更新源View
-                popupView.updateSrcView((ImageView) adapter.getViewByPosition(position, createImageIDData().get(position)));
+                popupView.updateSrcView((ImageView) adapter.getViewByPosition(position,  R.id.Recycler_item_imageView));
             }
         }, new ImageLoader())
                 .show();
