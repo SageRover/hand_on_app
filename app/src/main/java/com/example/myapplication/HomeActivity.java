@@ -117,6 +117,7 @@ public class HomeActivity extends AppCompatActivity {
 //            startActivity(intent);
 
                 XPopup(position, adapter);
+
             }
         });
 
