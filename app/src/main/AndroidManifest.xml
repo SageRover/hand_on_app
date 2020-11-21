@@ -23,10 +23,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".HomeActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".HomeActivity" android:screenOrientation="portrait" android:launchMode="singleInstance"/>
+        <activity android:name=".RegisterActivity" android:screenOrientation="portrait" android:launchMode="singleInstance"/>
         <activity android:name=".LoginActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -23,9 +23,9 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.chad.library.adapter.base.listener.OnItemLongClickListener;
 import com.example.myapplication.recyclerview.MyAdapter;
+import com.example.myapplication.recyclerview.OnNoDoubleClickListener;
 import com.lxj.xpopup.XPopup;
 import com.lxj.xpopup.core.ImageViewerPopupView;
 import com.lxj.xpopup.interfaces.OnSrcViewUpdateListener;
@@ -105,9 +105,9 @@ public class HomeActivity extends AppCompatActivity {
 
 
         //条目点击事件
-        adapter.setOnItemClickListener(new OnItemClickListener() {
+        adapter.setOnItemClickListener(new OnNoDoubleClickListener() {
             @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+            public void onNoDoubleClick(BaseQuickAdapter adapter, View view, int position) {
                 Log.d(TAG, "onItemClick: ");
                 Toast.makeText(HomeActivity.this, "点击了第" + (position + 1) + "条条目", Toast.LENGTH_SHORT).show();
 //            //大图预览
@@ -119,7 +119,6 @@ public class HomeActivity extends AppCompatActivity {
                 XPopup(position, adapter);
             }
         });
-
 
         //条目长按事件
         adapter.setOnItemLongClickListener(new OnItemLongClickListener() {
@@ -161,7 +160,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onSrcViewUpdate(ImageViewerPopupView popupView, int position) {
                 // 作用是当Pager切换了图片，需要更新源View
-                popupView.updateSrcView((ImageView) adapter.getViewByPosition(position,  R.id.Recycler_item_imageView));
+                popupView.updateSrcView((ImageView) adapter.getViewByPosition(position, R.id.Recycler_item_imageView));
             }
         }, new ImageLoader())
                 .show();
