@@ -101,8 +101,11 @@ public class HomeActivity extends AppCompatActivity {
             //大图预览
             Intent intent = new Intent(HomeActivity.this,PictureDisplayActivity.class);
             intent.putExtra("position",position);
-            intent.putIntegerArrayListExtra("enlargeImage", (ArrayList)createImageIDData());
+            intent.putIntegerArrayListExtra("enlargeImage", (ArrayList<Integer>)createImageIDData());
             startActivity(intent);
+
+//            XPopup();
+
 
         });
         //条目长按事件
@@ -116,6 +119,50 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
+
+//    private void XPopup() {
+//        //当你点击图片的时候执行以下代码：
+//        // 多图片场景（你有多张图片需要浏览）
+//        //srcView参数表示你点击的那个ImageView，动画从它开始，结束时回到它的位置。
+//        new XPopup.Builder(this).asImageViewer(imageView, position, List, new OnSrcViewUpdateListener() {
+//            @Override
+//            public void onSrcViewUpdate(ImageViewerPopupView popupView, int position) {
+//                // 作用是当Pager切换了图片，需要更新源View
+//                popupView.updateSrcView((ImageView) recyclerview.getChildAt(position));
+//            }
+//        }, new ImageLoader())
+//                .show();
+//
+//        // 单张图片场景
+//        new XPopup.Builder(this)
+//                .asImageViewer(imageView, url, new ImageLoader())
+//                .show();
+//
+//        // 图片加载器，XPopup不负责加载图片，需要你实现一个图片加载器传给我，这里以Glide为例（可直接复制到项目中）:
+//        class ImageLoader implements XPopupImageLoader {
+//            @Override
+//            public void loadImage(int position, @NonNull String url, @NonNull ImageView imageView) {
+//                //必须指定Target.SIZE_ORIGINAL，否则无法拿到原图，就无法享用天衣无缝的动画
+//                Glide.with(imageView).load(url).apply(new RequestOptions().override(Target.SIZE_ORIGINAL)).into(imageView);
+//            }
+//
+//            @Override
+//            public void loadImage(int position, @NonNull Object uri, @NonNull ImageView imageView) {
+//
+//            }
+//
+//            //必须实现这个方法，返回uri对应的缓存文件，可参照下面的实现，内部保存图片会用到。如果你不需要保存图片这个功能，可以返回null。
+//            @Override
+//            public File getImageFile(@NonNull Context context, @NonNull Object uri) {
+//                try {
+//                    return Glide.with(context).downloadOnly().load(uri).submit().get();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//                return null;
+//            }
+//        }
+//    }
 
     @NotNull
     private List<Integer> createImageIDData() {
